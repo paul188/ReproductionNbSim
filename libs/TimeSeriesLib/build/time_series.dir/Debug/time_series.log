@@ -1,0 +1,5 @@
+﻿  Building Custom Rule C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/TimeSeriesLib/CMakeLists.txt
+  TimeSeries.cpp
+  Auto build dll exports
+     Creating library C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/TimeSeriesLib/build/Debug/time_series.lib and object C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/TimeSeriesLib/build/Debug/time_series.exp
+  time_series.vcxproj -> C:\Users\paul1\OneDrive\Desktop\epidemiology\coding\Secihurd_Model\libs\TimeSeriesLib\build\Debug\time_series.dll

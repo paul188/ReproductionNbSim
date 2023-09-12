@@ -1,0 +1,10 @@
+^C:\USERS\PAUL1\ONEDRIVE\DESKTOP\EPIDEMIOLOGY\CODING\SECIHURD_MODEL\LIBS\TIMESERIESLIB\BUILD\CMAKEFILES\2E94587AB385C0E8702FE51664A83A40\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/TimeSeriesLib -BC:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/TimeSeriesLib/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/TimeSeriesLib/build/time_series.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\paul1\OneDrive\Desktop\epidemiology\coding\Secihurd_Model\libs\TimeSeriesLib\build\CMakeFiles\2e94587ab385c0e8702fe51664a83a40\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{87A7DD21-667D-30F1-B4AA-D6C525BA0D0E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
