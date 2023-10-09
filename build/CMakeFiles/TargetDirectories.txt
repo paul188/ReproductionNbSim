@@ -1,0 +1,3 @@
+C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/build/CMakeFiles/model.dir
+C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/build/CMakeFiles/ZERO_CHECK.dir
