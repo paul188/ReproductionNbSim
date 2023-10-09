@@ -24,7 +24,7 @@ events:
       The output was:
       0
       MSBuild version 17.4.1+9a89d02ff for .NET Framework
-      Der Buildvorgang wurde am 12.09.2023 15:45:15 gestartet.
+      Der Buildvorgang wurde am 16.09.2023 11:09:04 gestartet.
       Projekt "C:\\Users\\paul1\\OneDrive\\Desktop\\epidemiology\\coding\\Secihurd_Model\\libs\\TimeSeriesLib\\build\\CMakeFiles\\3.27.4\\CompilerIdC\\CompilerIdC.vcxproj" auf Knoten "1" (Standardziele).
       PrepareForBuild:
         Das Verzeichnis "Debug\\" wird erstellt.
@@ -50,7 +50,7 @@ events:
           0 Warnung(en)
           0 Fehler
       
-      Verstrichene Zeit 00:00:03.71
+      Verstrichene Zeit 00:00:01.45
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -76,7 +76,7 @@ events:
       The output was:
       0
       MSBuild version 17.4.1+9a89d02ff for .NET Framework
-      Der Buildvorgang wurde am 12.09.2023 15:45:19 gestartet.
+      Der Buildvorgang wurde am 16.09.2023 11:09:06 gestartet.
       Projekt "C:\\Users\\paul1\\OneDrive\\Desktop\\epidemiology\\coding\\Secihurd_Model\\libs\\TimeSeriesLib\\build\\CMakeFiles\\3.27.4\\CompilerIdCXX\\CompilerIdCXX.vcxproj" auf Knoten "1" (Standardziele).
       PrepareForBuild:
         Das Verzeichnis "Debug\\" wird erstellt.
@@ -102,7 +102,7 @@ events:
           0 Warnung(en)
           0 Fehler
       
-      Verstrichene Zeit 00:00:02.90
+      Verstrichene Zeit 00:00:01.05
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -121,8 +121,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/TimeSeriesLib/build/CMakeFiles/CMakeScratch/TryCompile-6nyrs7"
-      binary: "C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/TimeSeriesLib/build/CMakeFiles/CMakeScratch/TryCompile-6nyrs7"
+      source: "C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/TimeSeriesLib/build/CMakeFiles/CMakeScratch/TryCompile-08m1lf"
+      binary: "C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/TimeSeriesLib/build/CMakeFiles/CMakeScratch/TryCompile-08m1lf"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
@@ -131,37 +131,37 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/TimeSeriesLib/build/CMakeFiles/CMakeScratch/TryCompile-6nyrs7'
+        Change Dir: 'C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/TimeSeriesLib/build/CMakeFiles/CMakeScratch/TryCompile-08m1lf'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_a2b13.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_47696.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.4.1+9a89d02ff for .NET Framework
-        Der Buildvorgang wurde am 12.09.2023 15:45:24 gestartet.
-        Projekt "C:\\Users\\paul1\\OneDrive\\Desktop\\epidemiology\\coding\\Secihurd_Model\\libs\\TimeSeriesLib\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6nyrs7\\cmTC_a2b13.vcxproj" auf Knoten "1" (Standardziele).
+        Der Buildvorgang wurde am 16.09.2023 11:09:07 gestartet.
+        Projekt "C:\\Users\\paul1\\OneDrive\\Desktop\\epidemiology\\coding\\Secihurd_Model\\libs\\TimeSeriesLib\\build\\CMakeFiles\\CMakeScratch\\TryCompile-08m1lf\\cmTC_47696.vcxproj" auf Knoten "1" (Standardziele).
         PrepareForBuild:
-          Das Verzeichnis "cmTC_a2b13.dir\\Debug\\" wird erstellt.
-          Das Verzeichnis "C:\\Users\\paul1\\OneDrive\\Desktop\\epidemiology\\coding\\Secihurd_Model\\libs\\TimeSeriesLib\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6nyrs7\\Debug\\" wird erstellt.
-          Das Verzeichnis "cmTC_a2b13.dir\\Debug\\cmTC_a2b13.tlog\\" wird erstellt.
+          Das Verzeichnis "cmTC_47696.dir\\Debug\\" wird erstellt.
+          Das Verzeichnis "C:\\Users\\paul1\\OneDrive\\Desktop\\epidemiology\\coding\\Secihurd_Model\\libs\\TimeSeriesLib\\build\\CMakeFiles\\CMakeScratch\\TryCompile-08m1lf\\Debug\\" wird erstellt.
+          Das Verzeichnis "cmTC_47696.dir\\Debug\\cmTC_47696.tlog\\" wird erstellt.
         InitializeBuildStatus:
-          "cmTC_a2b13.dir\\Debug\\cmTC_a2b13.tlog\\unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
+          "cmTC_47696.dir\\Debug\\cmTC_47696.tlog\\unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a2b13.dir\\Debug\\\\" /Fd"cmTC_a2b13.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_47696.dir\\Debug\\\\" /Fd"cmTC_47696.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCCompilerABI.c"
           Microsoft (R) C/C++-Optimierungscompiler Version 19.34.31937 für x64
-          Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a2b13.dir\\Debug\\\\" /Fd"cmTC_a2b13.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
+          Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_47696.dir\\Debug\\\\" /Fd"cmTC_47696.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCCompilerABI.c"
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\paul1\\OneDrive\\Desktop\\epidemiology\\coding\\Secihurd_Model\\libs\\TimeSeriesLib\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6nyrs7\\Debug\\cmTC_a2b13.exe" /INCREMENTAL /ILK:"cmTC_a2b13.dir\\Debug\\cmTC_a2b13.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/TimeSeriesLib/build/CMakeFiles/CMakeScratch/TryCompile-6nyrs7/Debug/cmTC_a2b13.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/TimeSeriesLib/build/CMakeFiles/CMakeScratch/TryCompile-6nyrs7/Debug/cmTC_a2b13.lib" /MACHINE:X64  /machine:x64 cmTC_a2b13.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_a2b13.vcxproj -> C:\\Users\\paul1\\OneDrive\\Desktop\\epidemiology\\coding\\Secihurd_Model\\libs\\TimeSeriesLib\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6nyrs7\\Debug\\cmTC_a2b13.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\paul1\\OneDrive\\Desktop\\epidemiology\\coding\\Secihurd_Model\\libs\\TimeSeriesLib\\build\\CMakeFiles\\CMakeScratch\\TryCompile-08m1lf\\Debug\\cmTC_47696.exe" /INCREMENTAL /ILK:"cmTC_47696.dir\\Debug\\cmTC_47696.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/TimeSeriesLib/build/CMakeFiles/CMakeScratch/TryCompile-08m1lf/Debug/cmTC_47696.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/TimeSeriesLib/build/CMakeFiles/CMakeScratch/TryCompile-08m1lf/Debug/cmTC_47696.lib" /MACHINE:X64  /machine:x64 cmTC_47696.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_47696.vcxproj -> C:\\Users\\paul1\\OneDrive\\Desktop\\epidemiology\\coding\\Secihurd_Model\\libs\\TimeSeriesLib\\build\\CMakeFiles\\CMakeScratch\\TryCompile-08m1lf\\Debug\\cmTC_47696.exe
         FinalizeBuildStatus:
-          Die Datei "cmTC_a2b13.dir\\Debug\\cmTC_a2b13.tlog\\unsuccessfulbuild" wird gelöscht.
-          Aktualisieren des Timestamps von "cmTC_a2b13.dir\\Debug\\cmTC_a2b13.tlog\\cmTC_a2b13.lastbuildstate".
-        Die Erstellung von Projekt "C:\\Users\\paul1\\OneDrive\\Desktop\\epidemiology\\coding\\Secihurd_Model\\libs\\TimeSeriesLib\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6nyrs7\\cmTC_a2b13.vcxproj" ist abgeschlossen (Standardziele).
+          Die Datei "cmTC_47696.dir\\Debug\\cmTC_47696.tlog\\unsuccessfulbuild" wird gelöscht.
+          Aktualisieren des Timestamps von "cmTC_47696.dir\\Debug\\cmTC_47696.tlog\\cmTC_47696.lastbuildstate".
+        Die Erstellung von Projekt "C:\\Users\\paul1\\OneDrive\\Desktop\\epidemiology\\coding\\Secihurd_Model\\libs\\TimeSeriesLib\\build\\CMakeFiles\\CMakeScratch\\TryCompile-08m1lf\\cmTC_47696.vcxproj" ist abgeschlossen (Standardziele).
         
         Der Buildvorgang wurde erfolgreich ausgeführt.
             0 Warnung(en)
             0 Fehler
         
-        Verstrichene Zeit 00:00:03.04
+        Verstrichene Zeit 00:00:00.98
         
       exitCode: 0
   -
@@ -173,8 +173,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/TimeSeriesLib/build/CMakeFiles/CMakeScratch/TryCompile-iixunq"
-      binary: "C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/TimeSeriesLib/build/CMakeFiles/CMakeScratch/TryCompile-iixunq"
+      source: "C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/TimeSeriesLib/build/CMakeFiles/CMakeScratch/TryCompile-7mpzwv"
+      binary: "C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/TimeSeriesLib/build/CMakeFiles/CMakeScratch/TryCompile-7mpzwv"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
@@ -183,37 +183,37 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/TimeSeriesLib/build/CMakeFiles/CMakeScratch/TryCompile-iixunq'
+        Change Dir: 'C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/TimeSeriesLib/build/CMakeFiles/CMakeScratch/TryCompile-7mpzwv'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_24540.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_14fa1.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.4.1+9a89d02ff for .NET Framework
-        Der Buildvorgang wurde am 12.09.2023 15:45:28 gestartet.
-        Projekt "C:\\Users\\paul1\\OneDrive\\Desktop\\epidemiology\\coding\\Secihurd_Model\\libs\\TimeSeriesLib\\build\\CMakeFiles\\CMakeScratch\\TryCompile-iixunq\\cmTC_24540.vcxproj" auf Knoten "1" (Standardziele).
+        Der Buildvorgang wurde am 16.09.2023 11:09:09 gestartet.
+        Projekt "C:\\Users\\paul1\\OneDrive\\Desktop\\epidemiology\\coding\\Secihurd_Model\\libs\\TimeSeriesLib\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7mpzwv\\cmTC_14fa1.vcxproj" auf Knoten "1" (Standardziele).
         PrepareForBuild:
-          Das Verzeichnis "cmTC_24540.dir\\Debug\\" wird erstellt.
-          Das Verzeichnis "C:\\Users\\paul1\\OneDrive\\Desktop\\epidemiology\\coding\\Secihurd_Model\\libs\\TimeSeriesLib\\build\\CMakeFiles\\CMakeScratch\\TryCompile-iixunq\\Debug\\" wird erstellt.
-          Das Verzeichnis "cmTC_24540.dir\\Debug\\cmTC_24540.tlog\\" wird erstellt.
+          Das Verzeichnis "cmTC_14fa1.dir\\Debug\\" wird erstellt.
+          Das Verzeichnis "C:\\Users\\paul1\\OneDrive\\Desktop\\epidemiology\\coding\\Secihurd_Model\\libs\\TimeSeriesLib\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7mpzwv\\Debug\\" wird erstellt.
+          Das Verzeichnis "cmTC_14fa1.dir\\Debug\\cmTC_14fa1.tlog\\" wird erstellt.
         InitializeBuildStatus:
-          "cmTC_24540.dir\\Debug\\cmTC_24540.tlog\\unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
+          "cmTC_14fa1.dir\\Debug\\cmTC_14fa1.tlog\\unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_24540.dir\\Debug\\\\" /Fd"cmTC_24540.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_14fa1.dir\\Debug\\\\" /Fd"cmTC_14fa1.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++-Optimierungscompiler Version 19.34.31937 für x64
-          CMakeCXXCompilerABI.cpp
           Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_24540.dir\\Debug\\\\" /Fd"cmTC_24540.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCXXCompilerABI.cpp"
+          CMakeCXXCompilerABI.cpp
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_14fa1.dir\\Debug\\\\" /Fd"cmTC_14fa1.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.27\\Modules\\CMakeCXXCompilerABI.cpp"
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\paul1\\OneDrive\\Desktop\\epidemiology\\coding\\Secihurd_Model\\libs\\TimeSeriesLib\\build\\CMakeFiles\\CMakeScratch\\TryCompile-iixunq\\Debug\\cmTC_24540.exe" /INCREMENTAL /ILK:"cmTC_24540.dir\\Debug\\cmTC_24540.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/TimeSeriesLib/build/CMakeFiles/CMakeScratch/TryCompile-iixunq/Debug/cmTC_24540.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/TimeSeriesLib/build/CMakeFiles/CMakeScratch/TryCompile-iixunq/Debug/cmTC_24540.lib" /MACHINE:X64  /machine:x64 cmTC_24540.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_24540.vcxproj -> C:\\Users\\paul1\\OneDrive\\Desktop\\epidemiology\\coding\\Secihurd_Model\\libs\\TimeSeriesLib\\build\\CMakeFiles\\CMakeScratch\\TryCompile-iixunq\\Debug\\cmTC_24540.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\paul1\\OneDrive\\Desktop\\epidemiology\\coding\\Secihurd_Model\\libs\\TimeSeriesLib\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7mpzwv\\Debug\\cmTC_14fa1.exe" /INCREMENTAL /ILK:"cmTC_14fa1.dir\\Debug\\cmTC_14fa1.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/TimeSeriesLib/build/CMakeFiles/CMakeScratch/TryCompile-7mpzwv/Debug/cmTC_14fa1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/TimeSeriesLib/build/CMakeFiles/CMakeScratch/TryCompile-7mpzwv/Debug/cmTC_14fa1.lib" /MACHINE:X64  /machine:x64 cmTC_14fa1.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_14fa1.vcxproj -> C:\\Users\\paul1\\OneDrive\\Desktop\\epidemiology\\coding\\Secihurd_Model\\libs\\TimeSeriesLib\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7mpzwv\\Debug\\cmTC_14fa1.exe
         FinalizeBuildStatus:
-          Die Datei "cmTC_24540.dir\\Debug\\cmTC_24540.tlog\\unsuccessfulbuild" wird gelöscht.
-          Aktualisieren des Timestamps von "cmTC_24540.dir\\Debug\\cmTC_24540.tlog\\cmTC_24540.lastbuildstate".
-        Die Erstellung von Projekt "C:\\Users\\paul1\\OneDrive\\Desktop\\epidemiology\\coding\\Secihurd_Model\\libs\\TimeSeriesLib\\build\\CMakeFiles\\CMakeScratch\\TryCompile-iixunq\\cmTC_24540.vcxproj" ist abgeschlossen (Standardziele).
+          Die Datei "cmTC_14fa1.dir\\Debug\\cmTC_14fa1.tlog\\unsuccessfulbuild" wird gelöscht.
+          Aktualisieren des Timestamps von "cmTC_14fa1.dir\\Debug\\cmTC_14fa1.tlog\\cmTC_14fa1.lastbuildstate".
+        Die Erstellung von Projekt "C:\\Users\\paul1\\OneDrive\\Desktop\\epidemiology\\coding\\Secihurd_Model\\libs\\TimeSeriesLib\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7mpzwv\\cmTC_14fa1.vcxproj" ist abgeschlossen (Standardziele).
         
         Der Buildvorgang wurde erfolgreich ausgeführt.
             0 Warnung(en)
             0 Fehler
         
-        Verstrichene Zeit 00:00:03.48
+        Verstrichene Zeit 00:00:01.33
         
       exitCode: 0
 ...
