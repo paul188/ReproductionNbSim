@@ -246,8 +246,13 @@ EXPORTS
 	?eq_int_type@?$_Narrow_char_traits@DH@std@@SA_NAEBH0@Z
 	?erase@?$vector@NV?$allocator@N@std@@@std@@QEAA?AV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@N@std@@@std@@@2@V?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@N@std@@@std@@@2@@Z
 	?erase@?$vector@V?$vector@NV?$allocator@N@std@@@std@@V?$allocator@V?$vector@NV?$allocator@N@std@@@std@@@2@@std@@QEAA?AV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@V?$vector@NV?$allocator@N@std@@@std@@@std@@@std@@@2@V?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@V?$vector@NV?$allocator@N@std@@@std@@@std@@@std@@@2@@Z
+	?get_num_compartments@TimeSeries@@QEAA_KXZ
+	?get_num_timepoints@TimeSeries@@QEAA_KXZ
+	?get_time@TimeSeries@@QEAAN_K@Z
+	?get_times@TimeSeries@@QEAA?AV?$vector@NV?$allocator@N@std@@@std@@XZ
 	?get_value@TimeSeries@@QEAA?AV?$vector@NV?$allocator@N@std@@@std@@_K@Z
 	?length@?$_Narrow_char_traits@DH@std@@SA_KQEBD@Z
+	?linear_interpolate@@YANNNNNN@Z
 	?max@?$numeric_limits@_J@std@@SA_JXZ
 	?max_size@?$_Default_allocator_traits@V?$allocator@N@std@@@std@@SA_KAEBV?$allocator@N@2@@Z
 	?max_size@?$_Default_allocator_traits@V?$allocator@V?$vector@NV?$allocator@N@std@@@std@@@std@@@std@@SA_KAEBV?$allocator@V?$vector@NV?$allocator@N@std@@@std@@@2@@Z

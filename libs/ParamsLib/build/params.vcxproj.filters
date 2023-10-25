@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\paul1\OneDrive\Desktop\epidemiology\coding\Secihurd_Model\libs\ParamsLib\params.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\paul1\OneDrive\Desktop\epidemiology\coding\Secihurd_Model\libs\ParamsLib\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{7D277616-D51B-3CA2-BAE7-4B9FAC82D240}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -9,7 +9,7 @@ public:
     TimeSeries(double initial_time, std::vector<double> initial_values);
     TimeSeries& operator=(const TimeSeries& time_series);
     std::vector<double> get_value(size_t index);
-    std::vector<double> get_value(double time); //Returns value with possible interpolation
+    //std::vector<double> get_value(double time); //Returns value with possible interpolation
     std::vector<double> get_times();
     double get_time(size_t index);
     bool add_timepoint(double time, std::vector<double> values); //add timepoint to the end

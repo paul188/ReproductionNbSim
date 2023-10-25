@@ -102,27 +102,6 @@ double TimeSeries::get_time(size_t index)
     return time_series_data[index][0];
 }
 
-std::vector<double> TimeSeries::get_value(double time)
-{
-    if (time < 0) {
-        std::cerr << "Cannot get value at time < 0";
-    }
-    if (time == time_series_data[0][0]) {
-        return time_series_data[0];
-    }
-    //Find the first later time
-    std::vector<double> temp;
-    //Find the first later time
-    auto time_index_late =
-        std::distance(get_times().begin(), std::lower_bound(get_times().begin(), get_times().end(), time));
-    for (int i = 1; i < num_compartments + 1; i++) {
-        double y1 = time_series_data[time_index_late - 1][i];
-        double y2 = time_series_data[time_index_late][i];
-        temp.push_back(linear_interpolate(time, get_time(time_index_late - 1), get_time(time_index_late), y1, y2));
-    }
-    return temp;
-}
-
 size_t TimeSeries::get_num_compartments()
 {
     return num_compartments;

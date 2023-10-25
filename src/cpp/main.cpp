@@ -1,53 +1,29 @@
-#include <corecrt_math.h>
-#include <iostream>
 #include "../../libs/RungeKuttaLib/RungeKutta.h"
 #include <fstream>
-#include <string>
-
-//Set the parameters
-/*double R1    = 0.587;
-double R2    = 1 / (5.2);
-double R3    = 1 / (4.2);
-double R4    = 1.0 / 14;
-double R5    = 1.0 / 16;
-double R6    = 1 / (2.5);
-double R7    = 1 / (3.5);
-double R8    = 1.0 / 16;
-double R9    = 1 / (1 / R3 + (0.5 * 1 / R4));
-double delta = 1 / (6.92);
-double alpha = 0.01;
-double beta  = 0.05;
-double rho   = 0.35;
-double theta = 0.15;
-double d     = 1 / (6.5);
-double N0    = 1000;*/
 
 //Set the differential equations
-std::vector<double> right_hand_side(
-    double t, std::vector<double> x,
-    std::vector<double>
-        params) //params contains the parameters to be fitted: R1,R3,R4,R5,R6,R7,R8 and alpha, beta, rho, theta, delta, d
+std::vector<double> right_hand_side(double t, std::vector<double> x, Parameters params)
 {
-    double R1    = params[0];
-    double R2    = 5.2 - 1 / params[1];
-    double R3    = params[1];
-    double R4    = params[2];
-    double R5    = params[3];
-    double R6    = params[4];
-    double R7    = params[5];
-    double R8    = params[6];
-    double R9    = 1 / (1 / params[1] + 0.5 * 1 / params[2]);
-    double alpha = params[7];
-    double beta  = params[8];
-    double rho   = params[9];
-    double theta = params[10];
-    double delta = params[11];
-    double d     = params[12];
+    double R1    = params.get_parameter(param_key::R1);
+    double R2    = params.get_parameter(param_key::R2);
+    double R3    = params.get_parameter(param_key::R3);
+    double R4    = params.get_parameter(param_key::R4);
+    double R5    = params.get_parameter(param_key::R5);
+    double R6    = params.get_parameter(param_key::R6);
+    double R7    = params.get_parameter(param_key::R7);
+    double R8    = params.get_parameter(param_key::R8);
+    double R9    = params.get_parameter(param_key::R9);
+    double alpha = params.get_parameter(param_key::alpha);
+    double beta  = params.get_parameter(param_key::beta);
+    double rho   = params.get_parameter(param_key::rho);
+    double theta = params.get_parameter(param_key::theta);
+    double delta = params.get_parameter(param_key::delta);
+    double d     = params.get_parameter(param_key::d);
     double N0    = 0;
     for (int i = 0; i < x.size(); i++) {
-        N0 += x[i];
+        N0 += x[i] - x[7]; //don't want to count recovered from severe disease twice
     }
-    std::vector<double> result(8);
+    std::vector<double> result(9);
     result[0] = -R1 * (x[2] + beta * x[3]) / N0 * x[0];
     result[1] = R1 * (x[2] + beta * x[3]) / N0 * x[0] - R2 * x[1];
     result[2] = R2 * x[1] - ((1 - alpha) * R3 + alpha * R9) * x[2];
@@ -55,8 +31,8 @@ std::vector<double> right_hand_side(
     result[4] = rho * R6 * x[3] - ((1 - theta) * R5 + theta * R7) * x[4];
     result[5] = theta * R7 * x[4] - ((1 - delta) * R8 + delta * d) * x[5];
     result[6] = alpha * R9 * x[2] + (1 - rho) * R4 * x[3] + (1 - theta) * R5 * x[4] + (1 - delta) * R8 * x[5];
-    result[7] = delta * R8 * x[5];
-
+    result[7] = (1 - theta) * R5 * x[4] + (1 - delta) * R8 * x[5]; //extra compartment for fitting to Italy data
+    result[8] = delta * R8 * x[5];
     return result;
 }
 
@@ -83,17 +59,15 @@ double readline_to_double(std::string filepath, unsigned int line_number)
     return std::stod(line);
 }
 
-std::vector<double> read_values(unsigned int region, double initial_exposed, double initial_carrier)
+std::vector<double> read_values(unsigned int region, double initial_exposed, double initial_carrier, double total_pop)
 {
     std::vector<double> temp;
 
     std::fstream instream;
 
     //Read total population
-    double total_population =
-        readline_to_double("C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/src/cpp/"
-                           "data_for_simulation/initial_populations/total_populations.txt",
-                           region);
+    double total_population = total_pop;
+
     temp.push_back(total_population);
 
     temp.push_back(initial_exposed);
@@ -125,47 +99,79 @@ std::vector<double> read_values(unsigned int region, double initial_exposed, dou
                            region);
     temp.push_back(initial_recovered);
 
+    double initial_recovered_hospital =
+        readline_to_double("C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/src/cpp/"
+                           "data_for_simulation/initial_populations/initial_recovered.txt",
+                           region);
+    temp.push_back(initial_recovered_hospital);
+
     //Read Dead data
     double initial_dead = readline_to_double("C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/src/"
                                              "cpp/data_for_simulation/initial_populations/initial_dead.txt",
                                              region);
     temp.push_back(initial_dead);
-    std::cout << "Data read" << std::endl;
-    std::cout << temp.size() << std::endl;
     return temp;
+}
+
+Parameters create_input_params(char* argv[])
+{
+    Parameters params;
+    params.set_parameter(param_key::R1, atof(argv[4]));
+    params.set_parameter(param_key::R2, 1 / (5.2 - 1 / (atof(argv[5]))));
+    params.set_parameter(param_key::R3, atof(argv[5]));
+    params.set_parameter(param_key::R4, atof(argv[6]));
+    params.set_parameter(param_key::R5, atof(argv[7]));
+    params.set_parameter(param_key::R6, atof(argv[8]));
+    params.set_parameter(param_key::R7, atof(argv[9]));
+    params.set_parameter(param_key::R8, atof(argv[10]));
+    params.set_parameter(param_key::R9, 1 / (1 / atof(argv[5]) + 0.5 * 1 / (atof(argv[6]))));
+    params.set_parameter(param_key::alpha, atof(argv[11]));
+    params.set_parameter(param_key::beta, atof(argv[12]));
+    params.set_parameter(param_key::rho, atof(argv[13]));
+    params.set_parameter(param_key::theta, atof(argv[14]));
+    params.set_parameter(param_key::delta, atof(argv[15]));
+    params.set_parameter(param_key::d, atof(argv[16]));
+    return params;
 }
 
 int main(int argc, char* argv[])
 {
-
-    unsigned int region = atof(argv[1]);
-
-    std::vector<double> initial_values;
-
-    initial_values = read_values(region, atof(argv[2]), atof(argv[3])); //In arguments 1,2 we have exposed and carriers
-    std::vector<double> params = {atof(argv[4]),  atof(argv[5]),  atof(argv[6]),  atof(argv[7]),  atof(argv[8]),
-                                  atof(argv[9]),  atof(argv[10]), atof(argv[11]), atof(argv[12]), atof(argv[13]),
-                                  atof(argv[14]), atof(argv[15]), atof(argv[16])};
-    TimeSeries new_series(8);
-    Integrator Integrator;
-    new_series = Integrator.get_result(right_hand_side, initial_values, params, 0, 26, 102);
-    std::ofstream stream;
-    std::string filename = "C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/src/python/data" +
-                           std::to_string(region) + ".txt";
-    stream.open(filename);
-    if (stream.fail()) {
-        stream.close();
-        stream.open("../" + filename);
-    }
-    for (int j = 0; j < new_series.get_num_compartments(); j++) {
-        for (int i = 0; i < new_series.get_num_timepoints(); i++) {
-            stream << new_series.get_value((double)i)[(int)j] << std::endl;
+    if (argc != 18) {
+        std::cout << "Wrong number of input arguments" << std::endl;
+        for (int i = 0; i < argc; i++) {
+            std::cout << argv[i] << std::endl;
         }
-        stream << std::endl;
     }
-    for (int j = 0; j < new_series.get_num_compartments(); j++) {
-        for (int i = 0; i < new_series.get_num_timepoints(); i++) {
-            std::cout << new_series.get_value((double)i)[j] << std::endl;
+    else {
+        unsigned int region = atof(argv[1]);
+        std::vector<double> initial_values;
+        initial_values    = read_values(region, atof(argv[2]), atof(argv[3]), atof(argv[17]));
+        Parameters params = create_input_params(argv);
+        params.check_constraints();
+        TimeSeries new_series(9);
+        Integrator integrator;
+        integrator.set_parameters(params);
+        integrator.set_initial_vals(initial_values);
+        new_series = integrator.get_result(right_hand_side, 0, 26, 104);
+
+        for (int j = 0; j < new_series.get_num_compartments(); j++) {
+            for (int i = 0; i < new_series.get_num_timepoints(); i++) {
+                std::cout << new_series.get_value((double)i)[j] << std::endl;
+            }
+        }
+        std::ofstream stream;
+        std::string filename = "C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/src/python/data" +
+                               std::to_string(region) + ".txt";
+        stream.open(filename);
+        if (stream.fail()) {
+            stream.close();
+            stream.open("../" + filename);
+        }
+
+        for (int j = 0; j < new_series.get_num_compartments(); j++) {
+            for (int i = 0; i < new_series.get_num_timepoints(); i++) {
+                stream << new_series.get_value((double)i)[(int)j] << std::endl;
+            }
         }
     }
     return 0;

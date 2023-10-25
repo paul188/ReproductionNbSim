@@ -1,15 +1,18 @@
 #include "../TimeSeriesLib/TimeSeries.h"
+#include "../ParamsLib/params.h"
 
-typedef std::vector<double> (*differential_func)(double t, std::vector<double> x, std::vector<double> params);
+typedef std::vector<double> (*differential_func)(double t, std::vector<double> x, Parameters params);
 
 class Integrator
 {
 public:
     Integrator();
-    TimeSeries get_result(differential_func right_hand_side, std::vector<double> initial_values,
-                          std::vector<double> params, const double t0, const double tmax, const int num_steps);
-    TimeSeries get_result_adaptive(differential_func right_hand_side, std::vector<double> initial_values,
-                                   std::vector<double> params, const double t0, const double tmax, const int num_steps);
-    std::vector<double> cash_karp_step(differential_func right_hand_side, std::vector<double> y, const double t,
-                                       double h, std::vector<double>& yerr, std::vector<double> params);
+    Integrator(Parameters params, std::vector<double> initial_values);
+    void set_parameters(Parameters params);
+    void set_initial_vals(std::vector<double> initial_vals);
+    TimeSeries get_result(differential_func right_hand_side, const double t0, const double tmax, const int num_steps);
+
+private:
+    Parameters params;
+    std::vector<double> initial_values;
 };

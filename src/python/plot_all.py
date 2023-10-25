@@ -7,7 +7,8 @@ fig, ax = plt.subplots()
 
 region = 1
 
-filename = "data"+str(region)+".txt"
+filename = "C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/src/python/data" + \
+    str(region)+".txt"
 
 x = list(range(0, 100))
 
