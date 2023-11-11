@@ -1,6 +1,118 @@
 #include "../../libs/RungeKuttaLib/RungeKutta.h"
 #include <fstream>
+#include <direct.h> //Filesystem handling uses windows
 
+inline std::string get_path_to_Secihurd_Model()
+{
+    wchar_t* buff;
+    buff = _wgetcwd(NULL, 0);
+    std::wstring dir(buff);
+    std::string current_working_dir(dir.begin(), dir.end());
+    std::string path_to_Secihurd;
+    size_t pos = 0;
+    while ((pos = current_working_dir.find_last_of("\\")) != std::string::npos) {
+        std::string folder = current_working_dir.substr(pos + 1, current_working_dir.size() - 1);
+        if (folder != "Secihurd_Model") {
+            current_working_dir.erase(pos, current_working_dir.size() - 1);
+        }
+        else {
+            break;
+        }
+    }
+    return current_working_dir;
+}
+
+inline std::string get_filepath(std::string file, unsigned int region = 0)
+{
+    std::string path_to_Secihurd = get_path_to_Secihurd_Model();
+    if (file == "total_populations") {
+        return path_to_Secihurd + "/data/initial_populations/total_populations.txt";
+    }
+    if (file == "initial_recovered") {
+        return path_to_Secihurd + "/data/initial_populations/initial_recovered.txt";
+    }
+    if (file == "initial_infected") {
+        return path_to_Secihurd + "/data/initial_populations/initial_infected.txt";
+    }
+    if (file == "initial_icu") {
+        return path_to_Secihurd + "/data/initial_populations/initial_icu.txt";
+    }
+    if (file == "initial_hospitalized") {
+        return path_to_Secihurd + "/data/initial_populations/initial_hospitalized.txt";
+    }
+    if (file == "initial_dead") {
+        return path_to_Secihurd + "/data/initial_populations/initial_dead.txt";
+    }
+    if (file == "write_sim_data") {
+        return path_to_Secihurd + "/data/data_simulation_runs/" + std::to_string(region) + ".txt";
+    }
+    return path_to_Secihurd;
+}
+
+inline double readline_to_double(std::string file, unsigned int line_number)
+{
+    std::fstream stream;
+    stream.open(get_filepath(file));
+    if (stream.fail()) {
+        std::cout << "File failed to open" << std::endl;
+    }
+
+    int current_line = 0;
+    std::string line = "";
+    while (!stream.eof()) {
+        current_line++;
+        std::getline(stream, line);
+        if (current_line == line_number) {
+            break;
+        }
+    }
+    if (current_line < line_number) {
+        std::cout << "line not found, file does not contain as many lines" << std::endl;
+    }
+    return std::stod(line);
+}
+
+std::vector<double> read_values(unsigned int region, double initial_exposed, double initial_carrier, double total_pop)
+{
+    std::vector<double> temp;
+
+    std::fstream instream;
+
+    //Read total population
+    double total_population = total_pop;
+
+    temp.push_back(total_population);
+
+    temp.push_back(initial_exposed);
+    temp.push_back(initial_carrier);
+
+    //Read initial values from Italian data files
+    //First find out if program is called directly from exe or python fitting
+
+    //Read infected population
+    double initial_infected = readline_to_double("initial_infected", region);
+    temp.push_back(initial_infected);
+
+    //Read hospitalized population
+    double initial_hospitalized = readline_to_double("initial_hospitalized", region);
+    temp.push_back(initial_hospitalized);
+
+    //Read ICU data
+    double initial_icu = readline_to_double("initial_icu", region);
+    temp.push_back(initial_icu);
+
+    //Read Recovered data
+    double initial_recovered = readline_to_double("initial_recovered", region);
+    temp.push_back(initial_recovered);
+
+    double initial_recovered_hospital = readline_to_double("initial_recovered", region);
+    temp.push_back(initial_recovered_hospital);
+
+    //Read Dead data
+    double initial_dead = readline_to_double("initial_dead", region);
+    temp.push_back(initial_dead);
+    return temp;
+}
 //Set the differential equations
 std::vector<double> right_hand_side(double t, std::vector<double> x, Parameters params)
 {
@@ -36,83 +148,6 @@ std::vector<double> right_hand_side(double t, std::vector<double> x, Parameters 
     return result;
 }
 
-double readline_to_double(std::string filepath, unsigned int line_number)
-{
-    std::fstream stream;
-    stream.open(filepath);
-    if (stream.fail()) {
-        std::cout << "File failed to open" << std::endl;
-    }
-
-    int current_line = 0;
-    std::string line = "";
-    while (!stream.eof()) {
-        current_line++;
-        getline(stream, line);
-        if (current_line == line_number) {
-            break;
-        }
-    }
-    if (current_line < line_number) {
-        std::cout << "line not found, file does not contain as many lines" << std::endl;
-    }
-    return std::stod(line);
-}
-
-std::vector<double> read_values(unsigned int region, double initial_exposed, double initial_carrier, double total_pop)
-{
-    std::vector<double> temp;
-
-    std::fstream instream;
-
-    //Read total population
-    double total_population = total_pop;
-
-    temp.push_back(total_population);
-
-    temp.push_back(initial_exposed);
-    temp.push_back(initial_carrier);
-
-    //Read infected population
-    double initial_infected = readline_to_double("C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/"
-                                                 "src/cpp/data_for_simulation/initial_populations/initial_infected.txt",
-                                                 region);
-    temp.push_back(initial_infected);
-
-    //Read hospitalized population
-    double initial_hospitalized =
-        readline_to_double("C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/src/cpp/"
-                           "data_for_simulation/initial_populations/initial_hospitalized.txt",
-                           region);
-    temp.push_back(initial_hospitalized);
-
-    //Read ICU data
-    double initial_icu = readline_to_double("C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/src/"
-                                            "cpp/data_for_simulation/initial_populations/initial_icu.txt",
-                                            region);
-    temp.push_back(initial_icu);
-
-    //Read Recovered data
-    double initial_recovered =
-        readline_to_double("C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/src/cpp/"
-                           "data_for_simulation/initial_populations/initial_recovered.txt",
-                           region);
-    temp.push_back(initial_recovered);
-
-    double initial_recovered_hospital =
-        readline_to_double("C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/src/cpp/"
-                           "data_for_simulation/initial_populations/initial_recovered.txt",
-                           region);
-    temp.push_back(initial_recovered_hospital);
-
-    //Read Dead data
-    double initial_dead = readline_to_double("C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/src/"
-                                             "cpp/data_for_simulation/initial_populations/initial_dead.txt",
-                                             region);
-    temp.push_back(initial_dead);
-    return temp;
-}
-
 Parameters create_input_params(char* argv[])
 {
     Parameters params;
@@ -140,6 +175,7 @@ int main(int argc, char* argv[])
         std::cout << "Wrong number of input arguments" << std::endl;
         for (int i = 0; i < argc; i++) {
             std::cout << argv[i] << std::endl;
+            std::cout << "argument count: " << argc << std::endl;
         }
     }
     else {
@@ -159,20 +195,15 @@ int main(int argc, char* argv[])
                 std::cout << new_series.get_value((double)i)[j] << std::endl;
             }
         }
-        std::ofstream stream;
-        std::string filename = "C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/src/python/data" +
-                               std::to_string(region) + ".txt";
+        /*std::ofstream stream;
+        std::string filename = get_filepath("write_sim_data", region);
         stream.open(filename);
-        if (stream.fail()) {
-            stream.close();
-            stream.open("../" + filename);
-        }
 
         for (int j = 0; j < new_series.get_num_compartments(); j++) {
             for (int i = 0; i < new_series.get_num_timepoints(); i++) {
                 stream << new_series.get_value((double)i)[(int)j] << std::endl;
             }
-        }
+        }*/
     }
     return 0;
 }

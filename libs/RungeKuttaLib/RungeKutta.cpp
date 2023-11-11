@@ -77,7 +77,6 @@ TimeSeries Integrator::get_result(differential_func right_hand_side, const doubl
     double time             = t0;
     size_t step             = 1;
     size_t num_compartments = initial_values.size();
-    std::cout << "size of initial values: " << initial_values.size();
     std::vector<double> k1(num_compartments);
     std::vector<double> k2(num_compartments);
     std::vector<double> k3(num_compartments);
