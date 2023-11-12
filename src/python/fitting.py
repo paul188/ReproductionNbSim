@@ -118,7 +118,7 @@ def func(x, region, E0, C0, R1, R3, R4, R5, R6, R7, R8, alpha, beta, rho, theta,
     if not hasattr(x, '__iter__'):
         x = np.array([x])
     result = []
-    output = subprocess.check_output([r'./build/Debug/model.exe', str(region), str(
+    output = subprocess.check_output([r'build/Debug/model.exe', str(region), str(
         E0), str(C0), str(R1), str(R3), str(R4), str(R5), str(R6), str(R7), str(R8), str(alpha), str(beta), str(rho), str(theta), str(delta), str(d), str(total_pop)])
     output_str = codecs.decode(output)
     output_str_list = output_str.split('\r\n')
@@ -291,6 +291,9 @@ def print_fit(region, weights):
 
 
 weights = np.array([1, 1, 1, 1, 1])
+
+os.chdir(os.path.dirname(os.path.realpath(__file__)+'/../../../'))
+print(os.getcwd())
 
 for i in range(0, 21):
     print_fit(i, weights)
