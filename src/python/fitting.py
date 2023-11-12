@@ -218,15 +218,15 @@ def print_fit(region, weights):
     plt.clf()
 
     # Plot the number of Hospitalized
-    plt.plot(xData2,gather_italian_data(region)[26:52], color="b")
-    plt.plot(xData2,result_data[26:52], color="y")
+    plt.plot(xData2, gather_italian_data(region)[26:52], color="b")
+    plt.plot(xData2, result_data[26:52], color="y")
     plt.savefig(r'./data/results/regional_fitting/region' +
                 str(region+1)+'/plotHospitalized'+str(region+1)+".png", bbox_inches="tight")
     plt.clf()
 
     # Plot the number of ICU patients
     plt.plot(xData2, gather_italian_data(region)[52:78], color="b")
-    plt.plot(xData2, result_data[52:78],color="y")
+    plt.plot(xData2, result_data[52:78], color="y")
     plt.savefig(r'./data/results/regional_fitting/region' +
                 str(region+1)+'/plotICU'+str(region+1)+".png", bbox_inches="tight")
     plt.clf()
@@ -289,43 +289,42 @@ def print_fit(region, weights):
     f.write(str(distance))
     f.close()
 
-'''
-
 
 weights = np.array([1, 1, 1, 1, 1])
 
 for i in range(0, 21):
     print_fit(i, weights)
-'''
-#Calculate the best parameter set by averaging the best parameters.
+# Calculate the best parameter set by averaging the best parameters.
 quality_array = np.empty(21)
-avg_params = np.zeros((13,21))
-for i in range(0,21):
-    f = open(r'C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/src/python/regional_fitting/region' + str(i+1)+'/leastsq_fit/quality.txt',"r")
+avg_params = np.zeros((13, 21))
+for i in range(0, 21):
+    f = open(r'./data/results/regional_fitting/region' +
+             str(i+1)+'/leastsq_fit/quality.txt', "r")
     quality = float(f.readline())
     f.close()
     quality_array[i] = quality
-    f = open(r'C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/src/python/regional_fitting/region' + str(i+1)+'/leastsq_fit/best_values.txt',"r")
+    f = open(r'./data/results/regional_fitting/region' +
+             str(i+1)+'/leastsq_fit/best_values.txt', "r")
     index = 1
     for line in f:
         if index >= 3 and index <= 15:
-            avg_params[index-3][i]=float(line)
-        index=index+1
+            avg_params[index-3][i] = float(line)
+        index = index+1
 
-f =  open(r'C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/src/python/regional_fitting/averages.txt',"w+")
+f = open(r'./data/results/regional_fitting/averages.txt', "w+")
 f.write("average quality of the fit: ")
 f.write("\n")
 f.write(str(np.average(quality_array)))
 f.write("\n")
 f.write("average parameters: ")
 f.write("\n")
-for i in range(0,len(avg_params)):
+for i in range(0, len(avg_params)):
     f.write(str(np.average(avg_params[i])))
     f.write("\n")
-#f.write("average ratios of E0, C0 and N")
+# f.write("average ratios of E0, C0 and N")
 f.close()
 
-#Calculate the best fits for the values from the paper to compare
+# Calculate the best fits for the values from the paper to compare
 paper_params = lmfit.Parameters()
 paper_params.add('E0', value=60, min=1, max=1000.0)
 paper_params.add('C0', value=10, min=1, max=1000.0)
@@ -356,9 +355,11 @@ paper_params['theta'].vary = False
 paper_params['delta'].vary = False
 paper_params['d'].vary = False
 
+'''
 paper_quality_array = np.zeros(21)
-for region in  range(0,21):
-    max_pop = float(linecache.getline("C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/src/cpp/data_for_simulation/initial_populations/total_populations.txt",region+1))/10
+for region in range(0, 21):
+    max_pop = float(linecache.getline(
+        "./src/cpp/data_for_simulation/initial_populations/total_populations.txt", region+1))/10
     paper_params.add('region', value=region+1)
     paper_params['region'].vary = False
     paper_params.add('total_pop', value=3000, min=50, max=max_pop)
@@ -367,12 +368,12 @@ for region in  range(0,21):
     results = my_model.fit(total_data_array, params=paper_params,
                            x=np.arange(0, 130, 1), method='leastsq')
     average_sqd_deviation = 0
-    area = simpson(gather_italian_data(region),dx=1)
+    area = simpson(gather_italian_data(region), dx=1)
     average_sqd_deviation = np.average(np.square(results.residual))
     avg_sqd_per_height = average_sqd_deviation*((130.0/area)**2)
     paper_quality_array[i] = avg_sqd_per_height
 
-f = open(r'C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/src/python/regional_fitting/averages1.txt',"w+")
+f = open(r'.data/results/regional_fitting/averages1.txt', "w+")
 f.write("\n")
 f.write("average quality of paper fit: ")
 f.write("\n")
