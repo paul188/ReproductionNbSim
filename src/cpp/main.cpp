@@ -12,7 +12,7 @@ inline std::string get_path_to_Secihurd_Model()
     size_t pos = 0;
     while ((pos = current_working_dir.find_last_of("\\")) != std::string::npos) {
         std::string folder = current_working_dir.substr(pos + 1, current_working_dir.size() - 1);
-        if (folder != "Secihurd_Model") {
+        if (folder != "ReproductionNbSim") {
             current_working_dir.erase(pos, current_working_dir.size() - 1);
         }
         else {
