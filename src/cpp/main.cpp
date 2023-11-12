@@ -2,7 +2,7 @@
 #include <fstream>
 #include <direct.h> //Filesystem handling uses windows
 
-inline std::string get_path_to_Secihurd_Model()
+inline std::string get_path_to_parent_folder()
 {
     wchar_t* buff;
     buff = _wgetcwd(NULL, 0);
@@ -24,7 +24,7 @@ inline std::string get_path_to_Secihurd_Model()
 
 inline std::string get_filepath(std::string file, unsigned int region = 0)
 {
-    std::string path_to_Secihurd = get_path_to_Secihurd_Model();
+    std::string path_to_Secihurd = get_path_to_parent_folder();
     if (file == "total_populations") {
         return path_to_Secihurd + "/data/initial_populations/total_populations.txt";
     }
