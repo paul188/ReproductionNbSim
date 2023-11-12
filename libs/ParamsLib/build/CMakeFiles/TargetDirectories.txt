@@ -1,4 +1,0 @@
-C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/ParamsLib/build/CMakeFiles/params.dir
-C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/ParamsLib/build/CMakeFiles/INSTALL.dir
-C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/ParamsLib/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/paul1/OneDrive/Desktop/epidemiology/coding/Secihurd_Model/libs/ParamsLib/build/CMakeFiles/ZERO_CHECK.dir
