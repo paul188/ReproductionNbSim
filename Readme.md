@@ -45,8 +45,8 @@ in that order. Each with 104 timepoints.
 Simulates 27 days in realtime.
 
 Once the model.exe is generated, one can use the fitting functionality:
-in fitting.py, the model is successively fit to each region. Results are output in Secihurd_Model/data/results.
+in fitting.py, the model is successively fit to each region. Results are output in ReproductioNbSim/data/results.
 Results include for each region: fit quality (the lower the better the fit), plots of fitted compartments and the best parameter values.
 
-Secihurd_Model/src/python/fitting.py is ready to run after model.exe has been generated.
+ReproductionNbSim/src/python/fitting.py is ready to run after model.exe has been generated.
 
